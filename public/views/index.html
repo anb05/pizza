@@ -13,6 +13,35 @@
     </head>
 
     <body>
-        <h1>Начинаю изучать шаблон "Абстрактрактная фабрика"</h1>
+    <header>
+        <h1>Начинаю изучать идиому "Простая фабрика"</h1>
+    </header>
+
+    <form action="/" method="post">
+        <fieldset>
+            <legend>Заказ пиццы</legend>
+            <label for="pizza">Пицца:</label>
+            <select name="pizza" id="pizza">
+                <option disabled selected>Выберите пиццу</option>
+                <option value="cheese">Пицца с сыром</option>
+                <option value="clam">Пицца с мидиями</option>
+                <option value="pepperoni">Пицца пеперони</option>
+                <option value="veggie">Вегетарианская пицца</option>
+            </select>
+        </fieldset>
+        <p>
+            <input type="submit" value="Заказать">
+            <a href="/" class="button">Сброс</a>
+        </p>
+    </form>
+
+    <footer>
+        <p>Состояние заказа:</p>
+        <p><?= @$preparation; ?></p>
+        <p><?= @$baker; ?></p>
+        <p><?= @$cut; ?></p>
+        <p><?= @$box; ?></p>
+        <p><?= @$status; ?></p>
+    </footer>
     </body>
 </html>

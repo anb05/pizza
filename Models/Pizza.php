@@ -39,7 +39,7 @@ abstract class Pizza
      */
     public function prepare()
     {
-        return "Готовится пицца";
+        return "Пицца готовится";
     }
 
     /**
@@ -69,6 +69,6 @@ abstract class Pizza
      */
     public function box()
     {
-        return "Пицца нарезается";
+        return "Пицца упаковывается";
     }
 }

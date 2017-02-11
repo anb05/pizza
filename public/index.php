@@ -1,6 +1,6 @@
 <?php
 /**
- * The file is a Factory for create pizza
+ * The file is a Front Controller
  *
  * PHP version 7.1
  *
@@ -15,19 +15,11 @@
  * @link https://github.com/anb05/pizza.git
  */
 
-//namespace SimpleFactory\Models;
-
 session_start();
 
 require_once __DIR__ . "/../Generals/myHelper.php";
 
-use SimpleFactory\Models\SimplePizzaFactory;
+use SimpleFactory\Controllers\Order;
 
-$pizza = new SimplePizzaFactory();
-$item = $pizza->createPizza("Veggi");
-
-echo "<br>SESSION: <br>\n";
-var_dump($_SESSION);
-
-echo "<br>pizza: <br>\n";
-var_dump($item);
+$order = new Order;
+$order->fire();
