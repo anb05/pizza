@@ -26,6 +26,7 @@
  */
 function autoload($class)
 {
+    //echo "<br>AUTOLOAD:" . $class . "<br>\n";
     $dirName = explode("\\", $class);
     unset($dirName[0]);
 

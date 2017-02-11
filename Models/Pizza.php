@@ -18,7 +18,7 @@
 namespace SimpleFactory\Models;
 
 /**
- * Class PizzaStore is a clients of Factory
+ * Class Pizza
  *
  * @category Models
  *

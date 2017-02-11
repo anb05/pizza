@@ -24,7 +24,10 @@ require_once __DIR__ . "/../Generals/myHelper.php";
 use SimpleFactory\Models\SimplePizzaFactory;
 
 $pizza = new SimplePizzaFactory();
-$pizza->createPizza("clam");
+$item = $pizza->createPizza("Veggi");
 
 echo "<br>SESSION: <br>\n";
 var_dump($_SESSION);
+
+echo "<br>pizza: <br>\n";
+var_dump($item);

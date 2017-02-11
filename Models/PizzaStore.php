@@ -17,9 +17,6 @@
 
 namespace SimpleFactory\Models;
 
-//use SimpleFactory\Models\SimplePizzaFactory;
-
-
 /**
  * Class PizzaStore is a clients of Factory
  *
@@ -46,8 +43,6 @@ class PizzaStore
      * This is a construct
      *
      * @param SimplePizzaFactory $factory link to object Factory
-     * 
-     * @return void
      */
     public function __construct(SimplePizzaFactory $factory)
     {

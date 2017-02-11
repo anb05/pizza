@@ -17,10 +17,8 @@
 
 namespace SimpleFactory\Models;
 
-//use SimpleFactory\Models\Pizza;
-
 /**
- * Class PizzaStore is a clients of Factory
+ * Class SimplePizzaFactory
  *
  * @category Models
  *
@@ -44,13 +42,13 @@ class SimplePizzaFactory
     public function createPizza(string $pizzaType)
     {
         try {
-            $type = mb_convert_case($pizzaType, MB_CASE_TITLE) . "Pizza";
+            $type = __NAMESPACE__ . "\\" . mb_convert_case($pizzaType, MB_CASE_TITLE) . "Pizza";
             $pizza = new $type();
             if (!empty($_SESSION['errorPizza'])) {
                 unset($_SESSION['errorPizza']);
             }
             return $pizza;
-        } catch (\Throwable $e) {
+        } catch (\Throwable $e) { // Так делать нельзя!!!!!!
             $_SESSION['errorPizza'] = "Такой пиццы нет в асортименте!";
         }
         return false;
