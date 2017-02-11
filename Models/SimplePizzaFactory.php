@@ -10,14 +10,14 @@
  *
  * @author anb05 <alexandr05@list.ru>
  *
- * @license <GNU Pblic License>
+ * @license <GNU Public License>
  *
  * @link https://github.com/anb05/pizza.git
  */
 
 namespace SimpleFactory\Models;
 
-use SimpleFactory\Models\Pizza;
+//use SimpleFactory\Models\Pizza;
 
 /**
  * Class PizzaStore is a clients of Factory
@@ -28,49 +28,31 @@ use SimpleFactory\Models\Pizza;
  *
  * @author anb05 <alexandr05@list.ru>
  *
- * @license <GNU Pblic License>
+ * @license <GNU Public License>
  *
  * @link https://github.com/anb05/pizza.git
  */
 class SimplePizzaFactory
 {
     /**
-     * The pizze have a cheeze
-     */
-    const CHEESE    = "Cheese";
-
-    /**
-     * The pizze have a pepperoni
-     */
-    const PEPPERONI = "Pepperoni";
-
-    /**
-     * The pizze have a clam
-     */
-    const CLAM      = "Clam";
-
-    /**
-     * The pizze have a veggie
-     */
-    const VEGGIE    = "Veggie";
-
-    protected $pizza = null;
-
-    /**
      * This is a Factory to creating pizza
      *
      * @param string $pizzaType The type pizza to create
      *
-     * @return Pizza $pizza
+     * @return Pizza | bool $pizza
      */
     public function createPizza(string $pizzaType)
     {
         try {
             $type = mb_convert_case($pizzaType, MB_CASE_TITLE) . "Pizza";
             $pizza = new $type();
+            if (!empty($_SESSION['errorPizza'])) {
+                unset($_SESSION['errorPizza']);
+            }
             return $pizza;
         } catch (\Throwable $e) {
-            echo "<br> Такой пиццы нет в асортименте! <br>\n";
+            $_SESSION['errorPizza'] = "Такой пиццы нет в асортименте!";
         }
+        return false;
     }
 }

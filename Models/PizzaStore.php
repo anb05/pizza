@@ -10,14 +10,14 @@
  *
  * @author anb05 <alexandr05@list.ru>
  *
- * @license <GNU Pblic License>
+ * @license <GNU Public License>
  *
  * @link https://github.com/anb05/pizza.git
  */
 
 namespace SimpleFactory\Models;
 
-use SimpleFactory\Models\SimplePizzaFactory;
+//use SimpleFactory\Models\SimplePizzaFactory;
 
 
 /**
@@ -29,7 +29,7 @@ use SimpleFactory\Models\SimplePizzaFactory;
  *
  * @author anb05 <alexandr05@list.ru>
  *
- * @license <GNU Pblic License>
+ * @license <GNU Public License>
  *
  * @link https://github.com/anb05/pizza.git
  */
@@ -45,7 +45,7 @@ class PizzaStore
     /**
      * This is a construct
      *
-     * @param SimplePizzaFactory $factory link to jbject Factory
+     * @param SimplePizzaFactory $factory link to object Factory
      * 
      * @return void
      */
