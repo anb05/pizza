@@ -1,12 +1,12 @@
 <?php
 /**
- * The file is a Fabrics for create pizza
+ * The file is a client of Factory for create pizza
  *
  * PHP version 7.1
  *
  * @category Learn
  *
- * @package SimpleFabric\Models
+ * @package SimpleFactory\Models
  *
  * @author anb05 <alexandr05@list.ru>
  *
@@ -15,14 +15,17 @@
  * @link https://github.com/anb05/pizza.git
  */
 
-namespace SimpleFabric\Models;
+namespace SimpleFactory\Models;
+
+use SimpleFactory\Models\SimplePizzaFactory;
+
 
 /**
- * Class PizzaStore is a clients of Fabrics
+ * Class PizzaStore is a clients of Factory
  *
  * @category Models
  *
- * @package SimpleFabric\Models
+ * @package SimpleFactory\Models
  *
  * @author anb05 <alexandr05@list.ru>
  *
@@ -33,7 +36,7 @@ namespace SimpleFabric\Models;
 class PizzaStore
 {
     /**
-     * Link to object Fabrics
+     * Link to object Factory
      *
      * @var SimplePizzaFactory $factory
      */
@@ -42,7 +45,7 @@ class PizzaStore
     /**
      * This is a construct
      *
-     * @param SimplePizzaFactory $factory link to jbject Fabrics
+     * @param SimplePizzaFactory $factory link to jbject Factory
      * 
      * @return void
      */
