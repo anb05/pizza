@@ -60,10 +60,7 @@ class PizzaStore
     {
         $pizza = $this->factory->createPizza($pizzaType);
 
-        $pizza->prepare();
-        $pizza->bake();
-        $pizza->cut();
-        $pizza->box();
+        $pizza->prepare()->bake()->cut()->box();
 
         return $pizza;
     }

@@ -17,6 +17,7 @@
 
 namespace SimpleFactory\Controllers;
 
+use SimpleFactory\Models\PizzaStore;
 use SimpleFactory\Models\SimplePizzaFactory;
 
 /**
@@ -44,12 +45,30 @@ class Order
     public function fire()
     {
         if (!empty($_POST['pizza'])) {
-            $pizza = new SimplePizzaFactory();
-            $item = $pizza->createPizza($_POST['pizza']);
-            $preparation = $item->prepare();
-            $baker       = $item->bake();
-            $cut         = $item->cut();
-            $box         = $item->box();
+            $factory = new SimplePizzaFactory();
+            $store   = new PizzaStore($factory);
+            $pizza   = $store->orderPizza($_POST['pizza']);
+
+            foreach ($pizza->pizzaStatus as $statusKey=>$statusValue) {
+                switch ($statusKey) {
+                    case "prepare" :
+                        $preparation = $statusValue;
+                        break;
+
+                    case "bake" :
+                        $baker       = $statusValue;
+                        break;
+
+                    case "cut" :
+                        $cut         = $statusValue;
+                        break;
+
+                    case "box" :
+                        $box         = $statusValue;
+                        break;
+                }
+            }
+
             $status      = "Можете забирать пиццу с " . $_POST['pizza'];
         } else if (!empty($_SESSION['errorPizza'])) {
             $status = $_SESSION['errorPizza'];
@@ -58,5 +77,4 @@ class Order
         }
         require_once $this->view;
     }
-
 }

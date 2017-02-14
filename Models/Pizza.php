@@ -33,42 +33,51 @@ namespace SimpleFactory\Models;
 abstract class Pizza
 {
     /**
+     * Status of pizza
+     */
+    public $pizzaStatus = [];
+
+    /**
      * This is preparing pizza
      *
-     * @return string
+     * @return Pizza $this
      */
     public function prepare()
     {
-        return "Пицца готовится";
+        $this->pizzaStatus['prepare'] = "Пицца готовится";
+        return $this;
     }
 
     /**
      * This is baking pizza
      *
-     * @return string
+     * @return Pizza $this
      */
     public function bake()
     {
-        return "Пицца печётся";
+        $this->pizzaStatus['bake'] = "Пицца печётся";
+        return $this;
     }
 
     /**
      * This is cutting pizza
      *
-     * @return string
+     * @return Pizza $this
      */
     public function cut()
     {
-        return "Пицца нарезается";
+        $this->pizzaStatus['cut'] = "Пицца нарезается";
+        return $this;
     }
 
     /**
      * This is boxing pizza
      *
-     * @return string
+     * @return Pizza $this
      */
     public function box()
     {
-        return "Пицца упаковывается";
+        $this->pizzaStatus['box'] = "Пицца упаковывается";
+        return $this;
     }
 }
