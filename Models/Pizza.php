@@ -15,6 +15,8 @@
  * @link https://github.com/anb05/pizza.git
  */
 
+declare(strict_types=1);
+
 namespace SimpleFactory\Models;
 
 /**

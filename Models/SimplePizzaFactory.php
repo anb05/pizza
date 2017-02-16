@@ -15,6 +15,8 @@
  * @link https://github.com/anb05/pizza.git
  */
 
+declare(strict_types=1);
+
 namespace SimpleFactory\Models;
 
 /**
@@ -39,7 +41,7 @@ class SimplePizzaFactory
      *
      * @return Pizza | bool $pizza
      */
-    public function createPizza(string $pizzaType)
+    public function createPizza(string $pizzaType) : Pizza
     {
         try {
             $type = __NAMESPACE__ . "\\" . mb_convert_case($pizzaType, MB_CASE_TITLE) . "Pizza";
